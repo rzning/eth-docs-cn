@@ -41,30 +41,84 @@ ERC-20 代币标准
 >   调用者绝不能假定 `false` 永远不返回。
 
 ```solidity
+/**
+ * @dev [可选] 返回代币的名称
+ */
 function name() public view returns (string)
 
+/**
+ * @dev [可选] 返回代币的符号（通常为字母缩写）例如 “HIX”
+ */
 function symbol() public view returns (string)
 
+/**
+ * @dev [可选] 返回代币使用的小数点数，例如 8 表示将代币数量除以 100000000 以获得其用户表示
+ */
 function decimals() public view returns (uint8)
 
+/**
+ * @dev 返回代币总供应量
+ */
 function totalSupply() public view returns (uint256)
 
+/**
+ * @dev 返回 `_owner` 指定账户的余额
+ */
 function balanceOf(address _owner) public view returns (uint256 balance)
 
+/**
+ * @dev 向 `_to` 地址转 `_value` 数量的代币，并且必须触发 `Transfer` 事件。
+ *
+ * 如果消息调用者的账户余额没有足够的代币，函数应该抛出 ( `throw` ) 异常。
+ *
+ * NOTE: 转 0 个代币必须视为正常交易，同样需要触发 `Transfer` 事件。
+ */
 function transfer(address _to, uint256 _value) public returns (bool success)
 
+/**
+ * @dev 从 `_from` 地址向 `_to` 地址转 `_value` 数量的代币，并且必须触发 `Transfer` 事件。
+ *
+ * 此方法用于撤销工作流 ( Withdraw Workflow ) ，允许合约代表你转移代币。
+ *
+ * 例如，这可以用于允许合约代表你转移代币和/或以子货币收取费用。
+ *
+ * 除非 `_from` 账户通过某种机制授权消息的发送者，否则函数应该抛出 ( `throw` ) 异常。
+ *
+ * NOTE: 转 0 个代币必须视为正常交易，并触发 `Transfer` 事件。
+ */
 function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)
 
+/**
+ * @dev 授权 `_spender` 可以从你的账户中多次提款 ( Withdraw ) ，最多提取 ( Withdraw ) `_value` 数量的代币。
+ *
+ * 如果再次调用此函数，将使用 `_value` 覆盖当前限额 ( Allowance ) 。
+ *
+ * NOTE: 为防止向量攻击 ( Attack Vectors ) ，客户端应确保以下面方式创建用户接口：
+ * 需要先将限额设置为 0 ，然后再为同一 `_spender` 设置另一个值。
+ */
 function approve(address _spender, uint256 _value) public returns (bool success)
 
+/**
+ * @dev 返回 `_spender` 仍然可以从 `_owner` 中提取的的金额。
+ *
+ * 查询 `_owner` 授权给 `_spender` 的额度。
+ */
 function allowance(address _owner, address _spender) public view returns (uint256 remaining)
 ```
 
 ### 事件 Events
 
 ```solidity
+/**
+ * @dev 必须在代币转账 ( Transferred ) 时触发，包括零值转账。
+ *
+ * NOTE: 一个代币合约在创建新代币时应该触发 `Transfer` 事件，并将 `_from` 地址设置为 `0x0` 。
+ */
 event Transfer(address indexed _from, address indexed _to, uint256 _value)
 
+/**
+ * @dev `approve()` 函数成功调用时，必须触发 `Approval` 事件。
+ */
 event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ```
 
