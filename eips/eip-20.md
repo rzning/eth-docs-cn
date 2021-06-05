@@ -12,7 +12,6 @@ ERC-20 代币标准
 
 一个代币 ( Tokens ) 的标准接口。
 
-
 ## 摘要 Abstract
 
 > The following standard allows for the implementation of a standard API for tokens within smart contracts.
@@ -36,8 +35,9 @@ ERC-20 代币标准
 ### 函数 Methods
 
 > Notes:
+>
 > - 一下规范使用 Solidity 0.4.17 或更高版本语法。
-> - 调用者必须处理 `returns (bool success)` 返回  `false` 的情况，
+> - 调用者必须处理 `returns (bool success)` 返回 `false` 的情况，
 >   调用者绝不能假定 `false` 永远不返回。
 
 ```solidity
@@ -126,4 +126,3 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 
 - [OpenZeppelin implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
 - [ConsenSys implementation](https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol)
-
