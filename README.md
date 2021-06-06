@@ -1,5 +1,6 @@
-# eth-docs-cn
-Ethereum 中文文档，仅用于个人学习记录及参考。
+# eth-notes-cn
+
+Ethereum 学习笔记，仅用于个人学习记录及参考。
 
 以太坊官网： <https://www.ethereum.org/>
 
