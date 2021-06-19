@@ -32,7 +32,9 @@ abstract contract Pausable {
     }
 
     /**
-     * @dev 若合约被暂停，则返回 true ，否则返回 false
+     * @dev [Getter] 暂停状态
+     *
+     * - 若合约被暂停，则返回 true ，否则返回 false
      */
     function paused() public view virtual returns (bool) {
         return _paused;
