@@ -14,7 +14,7 @@ including core protocol specifications, client APIs, and contract standards.
 
 ## Interface
 
-| Number | title                                       | 标题                                                                  |
+| Number | Title                                       | 标题                                                                  |
 | ------ | ------------------------------------------- | --------------------------------------------------------------------- |
 | 6      | Renaming SUICIDE opcode                     | 重命名 SUICIDE 操作码                                                 |
 | 234    | Add `blockHash` to JSON-RPC filter options. | 将 `blockHash` 添加到 JSON-RPC 过滤选项                               |
