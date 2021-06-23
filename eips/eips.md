@@ -14,6 +14,8 @@ including core protocol specifications, client APIs, and contract standards.
 
 ## Interface
 
+Final:
+
 | Number | Title                                       | 标题                                                                  |
 | ------ | ------------------------------------------- | --------------------------------------------------------------------- |
 | 6      | Renaming SUICIDE opcode                     | 重命名 SUICIDE 操作码                                                 |
@@ -23,6 +25,12 @@ including core protocol specifications, client APIs, and contract standards.
 | 2159   | Common Prometheus Metrics Names for Clients | 以太坊客户端与 Prometheus 一起使用的通用指标 ( Metrics ) 的标准化名称 |
 | 2696   | JavaScript `request` method RPC transport   | RPC 通过 JavaScript 对象进行交互时的远程调用标准                      |
 | 2700   | JavaScript Provider Event Emitter           | JavaScript 以太坊提供者事件触发器                                     |
+
+Draft:
+
+| Number | Title                               | 标题     |
+| ------ | ----------------------------------- | -------- |
+| 1474   | Remote procedure call specification | RPC 规范 |
 
 ## ERC
 
