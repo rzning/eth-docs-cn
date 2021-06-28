@@ -273,7 +273,7 @@ instance.getValue().then((value) => {
 发送以太 ( Ether ) 以及触发回退 ( Fallback ) 函数：
 
 ```js
-// 通过发送一个交易到此函数来触发回退函数：
+// 通过发送一个交易来触发合约的回退函数：
 instance
   .sendTransaction({
     // ...
